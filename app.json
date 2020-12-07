@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "SpotifyClone",
-    "slug": "SpotifyClone",
+    "name": "MuusikaKuulamiseTeenus",
+    "slug": "MKT",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "https://i.imgur.com/c7Yn5Hi.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

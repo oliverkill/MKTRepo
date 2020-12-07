@@ -66,7 +66,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="TabOneScreen"
         component={HomeScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Muusika Kuulamise Teenus' }}
       />
     </TabOneStack.Navigator>
   );
@@ -80,7 +80,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ headerTitle: 'Muusika Kuulamise Teenus' }}
       />
     </TabTwoStack.Navigator>
   );
