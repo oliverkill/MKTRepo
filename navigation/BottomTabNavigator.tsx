@@ -8,6 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import AlbumScreen from "../screens/AlbumScreen";
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -50,9 +51,6 @@ export default function BottomTabNavigator() {
   );
 }
 
-function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
@@ -65,6 +63,12 @@ function TabOneNavigator() {
         name="TabOneScreen"
         component={HomeScreen}
         options={{ headerTitle: 'Muusika Kuulamise Teenus' }}
+      />
+
+      <TabOneStack.Screen
+          name="AlbumScreen"
+          component={AlbumScreen}
+          options={{ headerTitle: 'Album' }}
       />
     </TabOneStack.Navigator>
   );
