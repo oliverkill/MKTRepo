@@ -6,9 +6,11 @@ import * as React from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import HomeScreen from '../screens/HomeScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList, TabOneParamList, TabTwoParamList, TabThreeParamList, TabFourParamList } from '../types';
 import AlbumScreen from "../screens/AlbumScreen";
+import SearchScreen from '../screens/SearchScreen';
+import CollectionScreen from '../screens/CollectionScreen';
+import PremiumScreen from '../screens/PremiumScreen';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -33,16 +35,16 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ color }) => <EvilIcons name="search" size={30} style={{ marginBottom: -3 }} color={color} />,
         }}
       />
-        <BottomTab.Screen
+      <BottomTab.Screen
         name="Kogu"
-        component={TabTwoNavigator}
+        component={TabThreeNavigator}
         options={{
           tabBarIcon: ({ color }) => <MaterialCommunityIcons name="library-music-outline" size={30} style={{ marginBottom: -3 }} color={color} />,
         }}
       />
-            <BottomTab.Screen
+      <BottomTab.Screen
         name="Premium"
-        component={TabTwoNavigator}
+        component={TabFourNavigator}
         options={{
           tabBarIcon: ({ color }) => <FontAwesome5 name="dollar-sign" size={30} style={{ marginBottom: -3 }} color={color} />,
         }}
@@ -60,15 +62,15 @@ function TabOneNavigator() {
   return (
     <TabOneStack.Navigator>
       <TabOneStack.Screen
-        name="TabOneScreen"
+        name="HomeScreen"
         component={HomeScreen}
         options={{ headerTitle: 'Muusika Kuulamise Teenus' }}
       />
 
       <TabOneStack.Screen
-          name="AlbumScreen"
-          component={AlbumScreen}
-          options={{ headerTitle: 'Album' }}
+        name="AlbumScreen"
+        component={AlbumScreen}
+        options={{ headerTitle: 'Album' }}
       />
     </TabOneStack.Navigator>
   );
@@ -80,10 +82,38 @@ function TabTwoNavigator() {
   return (
     <TabTwoStack.Navigator>
       <TabTwoStack.Screen
-        name="TabTwoScreen"
-        component={TabTwoScreen}
-        options={{ headerTitle: 'Muusika Kuulamise Teenus' }}
+        name="SearchScreen"
+        component={SearchScreen}
+        options={{ headerTitle: 'Otsi' }}
       />
     </TabTwoStack.Navigator>
+  );
+}
+
+const TabThreeStack = createStackNavigator<TabThreeParamList>();
+
+function TabThreeNavigator() {
+  return (
+    <TabThreeStack.Navigator>
+      <TabThreeStack.Screen
+        name="CollectionScreen"
+        component={CollectionScreen}
+        options={{ headerTitle: 'Kogu' }}
+      />
+    </TabThreeStack.Navigator>
+  );
+}
+
+const TabFourStack = createStackNavigator<TabFourParamList>();
+
+function TabFourNavigator() {
+  return (
+    <TabFourStack.Navigator>
+      <TabFourStack.Screen
+        name="PremiumScreen"
+        component={PremiumScreen}
+        options={{ headerTitle: 'Premium' }}
+      />
+    </TabFourStack.Navigator>
   );
 }

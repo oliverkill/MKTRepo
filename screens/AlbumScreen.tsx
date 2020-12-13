@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {View, Text, FlatList} from "react-native";
+import {View, Text, FlatList, StyleSheet} from "react-native";
 import { useRoute } from '@react-navigation/native';
 import albumDetails from "../data/albumDetails";
 import SongListItem from "../components/SongListItem";
@@ -20,11 +20,16 @@ const AlbumScreen = () => {
                 renderItem={({ item }) => <SongListItem song={item} />}
                 keyExtractor={( item => item.id)}
                 ListHeaderComponent={() => <AlbumHeader album={albumDetails} />}
+                style={styles.container}
             />
         </View>
     )
 };
 
-
-
 export default AlbumScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        marginBottom: 75,
+    }
+  });

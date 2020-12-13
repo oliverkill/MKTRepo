@@ -4,17 +4,28 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
+  Avaleht: undefined;
+  Otsi: undefined;
+  Kogu: undefined;
+  Premium: undefined;
   TabOne: undefined;
-  TabTwo: undefined;
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined;
+  HomeScreen: undefined;
   AlbumScreen: undefined;
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  SearchScreen: undefined;
+};
+
+export type TabThreeParamList = {
+  CollectionScreen: undefined;
+};
+
+export type TabFourParamList = {
+  PremiumScreen: undefined;
 };
 
 export type Album = {

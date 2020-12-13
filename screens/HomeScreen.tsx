@@ -16,6 +16,7 @@ export default function HomeScreen() {
                 />
             )}
             keyExtractor={(item) => item.id}
+            style={styles.albumCategory}
         />
       </View>
   );
@@ -35,5 +36,8 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  albumCategory: {
+    marginBottom: 75,
   },
 });
